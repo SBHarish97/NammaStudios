@@ -122,6 +122,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Hover effect for the "SAY HELLO" button and email link
+    // PLAYGROUND hover added for the "PORTFOLIO" text in the header
+document.addEventListener("mouseover", (e) => {
+    if (e.target.closest(".play-header h2")) {
+        cursorText.textContent = "PORTFOLIO";
+        dot.classList.add("is-hovering-btn");
+    }
+});
+
+document.addEventListener("mouseout", (e) => {
+    if (e.target.closest(".play-header h2")) {
+        dot.classList.remove("is-hovering-btn");
+    }
+});
     const dot = document.getElementById('customCursorDot');
     const cursorText = dot.querySelector('.custom-cursor-text');
 
