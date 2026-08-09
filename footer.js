@@ -42,10 +42,30 @@ body {
 /* =========================================
    TOP SECTION: LET'S WORK TOGETHER
    ========================================= */
+.footer-line-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.footer-line-reveal {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(120%);
+}
+
+.is-visible .footer-line-reveal {
+    animation: footerWaveReveal 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+@keyframes footerWaveReveal {
+    0% { transform: translateY(120%); }
+    100% { transform: translateY(0); }
+}
+
 .footer-top-section {
     display: flex;
-    // justify-content: space-between;
-    gap: 9vw;
+    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 6vw;
     padding:0vw 1vw 0vw 1vw;
@@ -78,6 +98,20 @@ body {
     margin-right: 2vw;
     object-fit: cover;
     display: inline-block;
+}
+
+.footer-img-reveal {
+    width: 0;
+    opacity: 0;
+    margin-right: 0;
+    transition: width 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), opacity 0.5s ease-out, margin-right 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.is-visible .footer-img-reveal {
+    width: 1.8em; /* Shorter expanded width */
+    opacity: 1;
+    margin-right: 2vw;
+    transition-delay: 0.8s;
 }
 
 .footer-side-text {
@@ -125,7 +159,14 @@ body {
     margin: 10vw 1.2vw 0vw 1.2vw;
 }
 
+@keyframes footerVideoCascade {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 .footer-video-card {
+    opacity: 0; /* Starts hidden */
+    transform: translateY(40px);
     width: 96%;
     height:90%;
     aspect-ratio: 3.8/2.6;
@@ -138,6 +179,10 @@ body {
     color: #fff;
     font-size: 0.8rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.is-visible .footer-video-card {
+    animation: footerVideoCascade 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
 }
 
 .footer-video-card video {
@@ -271,149 +316,106 @@ body {
 
     <!-- TOP: LET'S WORK TOGETHER -->
     <div class="footer-top-section">
-        <div class="footer-hero-text">
-            <div class="footer-hero-line">LET'S WORK</div>
+        <div class="footer-hero-text footer-animate-on-scroll">
             <div class="footer-hero-line">
-                <!-- Team Image perfectly aligned -->
-                <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp" alt="Team" class="footer-hero-img">
-                TOGETHER
+                <span class="footer-line-mask"><span class="footer-line-reveal" style="animation-delay: 0.0s;">LET'S WORK</span></span>
+            </div>
+            <div class="footer-hero-line">
+                <span class="footer-line-mask"><span class="footer-line-reveal" style="animation-delay: 0.15s;">
+                    <!-- Team Image perfectly aligned -->
+                    <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp" alt="Team" class="footer-hero-img footer-img-reveal">
+                    TOGETHER
+                </span></span>
             </div>
         </div>
 
-        <div class="footer-side-text">
-            <p>Work with us if average isn't your thing.<br>Drop it, we'll build it!</p>
+        <div class="footer-side-text footer-animate-on-scroll">
+            <p>
+                <span class="footer-line-mask" style="display: block;">
+                    <span class="footer-line-reveal" style="animation-delay: 0.1s;">Work with us if average isn't your thing.</span>
+                </span>
+                <span class="footer-line-mask" style="display: block;">
+                    <span class="footer-line-reveal" style="animation-delay: 0.2s;">Drop it, we'll build it!</span>
+                </span>
+            </p>
             <a href="#contact" class="say-hello-btn text-mono">
-                SAY HELLO <span class="hello-arrow">&rarr;</span>
+                <span class="footer-line-mask" style="display: block;">
+                    <span class="footer-line-reveal" style="animation-delay: 0.3s;">SAY HELLO <span class="hello-arrow">&rarr;</span></span>
+                </span>
             </a>
         </div>
     </div>
 
     <!-- MIDDLE: 6 VIDEO CARDS ROW -->
-    <div class="footer-videos-row">
-        <div class="footer-video-card">
+    <div class="footer-videos-row footer-animate-on-scroll">
+        <div class="footer-video-card" style="animation-delay: 0.1s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa249c8ad1d2624abf3d5_Footer-Service-designV2-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="footer-video-card">
+        <div class="footer-video-card" style="animation-delay: 0.2s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa1926bb2adbd4315d488_Zefir%20footerV2-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="footer-video-card">
+        <div class="footer-video-card" style="animation-delay: 0.3s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa2440a49684a10b9e055_FOOTER%20-%20BRANDINGV2-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="footer-video-card">
+        <div class="footer-video-card" style="animation-delay: 0.4s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa20fc54b7796aaa5edf6_SILVR-Video%201%20footersV3-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="footer-video-card">
+        <div class="footer-video-card" style="animation-delay: 0.5s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa0feb2681e0616dc3b3a_Footer-supercomics-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="footer-video-card">
+        <div class="footer-video-card" style="animation-delay: 0.6s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa22f852959114b6c7b56_OSOL-COVER-footer-V2-transcode.mp4" autoplay loop muted playsinline></video>
         </div>
     </div>
 
     <!-- NEW FOOTER INFO SECTION -->
-    <div class="footer-info-section text-mono">
+    <div class="footer-info-section text-mono footer-animate-on-scroll">
         <div class="footer-info-left">
             <div class="footer-links-group">
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">HOME</span>
-                        <span class="slide-text-hover">HOME</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">WORK</span>
-                        <span class="slide-text-hover">WORK</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">SERVICES</span>
-                        <span class="slide-text-hover">SERVICES</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">STUDIO</span>
-                        <span class="slide-text-hover">STUDIO</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">PLANS</span>
-                        <span class="slide-text-hover">PLANS</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">APPROACH</span>
-                        <span class="slide-text-hover">APPROACH</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">NEWS</span>
-                        <span class="slide-text-hover">NEWS</span>
-                    </span>
-                </a>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.1s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">HOME</span><span class="slide-text-hover">HOME</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.2s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">WORK</span><span class="slide-text-hover">WORK</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.3s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">SERVICES</span><span class="slide-text-hover">SERVICES</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.4s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">STUDIO</span><span class="slide-text-hover">STUDIO</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.5s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">PLANS</span><span class="slide-text-hover">PLANS</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.6s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">APPROACH</span><span class="slide-text-hover">APPROACH</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.7s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">NEWS</span><span class="slide-text-hover">NEWS</span></span></a></span></span>
             </div>
             <div class="footer-links-group">
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">YOUTUBE</span>
-                        <span class="slide-text-hover">YOUTUBE</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">LINKEDIN</span>
-                        <span class="slide-text-hover">LINKEDIN</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">INSTAGRAM</span>
-                        <span class="slide-text-hover">INSTAGRAM</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">LEGAL</span>
-                        <span class="slide-text-hover">LEGAL</span>
-                    </span>
-                </a>
-                <a href="#" class="slide-link-box">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">SITE EN FRANCAIS</span>
-                        <span class="slide-text-hover">SITE EN FRANCAIS</span>
-                    </span>
-                </a>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.8s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">YOUTUBE</span><span class="slide-text-hover">YOUTUBE</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 0.9s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">LINKEDIN</span><span class="slide-text-hover">LINKEDIN</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.0s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">INSTAGRAM</span><span class="slide-text-hover">INSTAGRAM</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.1s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">LEGAL</span><span class="slide-text-hover">LEGAL</span></span></a></span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.2s;"><a href="#" class="slide-link-box"><span class="slide-text-wrapper"><span class="slide-text-original">SITE EN FRANCAIS</span><span class="slide-text-hover">SITE EN FRANCAIS</span></span></a></span></span>
             </div>
         </div>
         
         <div class="footer-info-right">
             <div class="footer-text-block">
-                WE ARE A CREATIVE STUDIO BASED IN PARIS, BARCELONA<br>
-                & LONDON.
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.3s;">WE ARE A CREATIVE STUDIO BASED IN PARIS, BARCELONA</span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.4s;">& LONDON.</span></span>
             </div>
             <div class="footer-text-block">
-                BIG PROJECT? CRAZY THOUGHT? OR JUST FEEL LIKE<br>
-                CHATTING?
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.5s;">BIG PROJECT? CRAZY THOUGHT? OR JUST FEEL LIKE</span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.6s;">CHATTING?</span></span>
             </div>
             <div class="footer-text-block">
-                LET'S TALK!
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.7s;">LET'S TALK!</span></span>
             </div>
             <div class="footer-text-block">
-                <a href="mailto:HELLO@STUDIONAMMA.COM" class="slide-link-box mailto-link" style="text-decoration:none; color:inherit;">
-                    <span class="slide-text-wrapper">
-                        <span class="slide-text-original">HELLO@STUDIONAMMA.COM</span>
-                        <span class="slide-text-hover">HELLO@STUDIONAMMA.COM</span>
+                <span class="footer-line-mask" style="display: block;">
+                    <span class="footer-line-reveal" style="display: block; animation-delay: 1.8s;">
+                        <a href="mailto:HELLO@STUDIONAMMA.COM" class="slide-link-box mailto-link" style="text-decoration:none; color:inherit;">
+                            <span class="slide-text-wrapper">
+                                <span class="slide-text-original">HELLO@STUDIONAMMA.COM</span>
+                                <span class="slide-text-hover">HELLO@STUDIONAMMA.COM</span>
+                            </span>
+                        </a>
                     </span>
-                </a>
+                </span>
             </div>
             <div class="footer-text-block">
-                COPYRIGHT 2025<br>
-                STUDIO NAMMA
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 1.9s;">COPYRIGHT 2025</span></span>
+                <span class="footer-line-mask" style="display: block;"><span class="footer-line-reveal" style="display: block; animation-delay: 2.0s;">STUDIO NAMMA</span></span>
             </div>
         </div>
     </div>
@@ -428,6 +430,18 @@ body {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML('beforeend', customFooterCode);
+
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { rootMargin: "0px 0px -10% 0px" });
+
+    document.querySelectorAll('.footer-animate-on-scroll').forEach(el => {
+        footerObserver.observe(el);
+    });
 
     // Overscroll animation for the giant bottom text
     const bottomStretchText = document.getElementById('bottomStretchText');
