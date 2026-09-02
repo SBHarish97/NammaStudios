@@ -326,7 +326,7 @@ body.dark-mode #statusBar {
 <!-- FULLSCREEN MENU OVERLAY (MATCHING IMAGE_92FCEC) -->
 <div class="namma-menu-drawer" id="nammaMenuDrawer">
     <div class="namma-menu-grid">
-        <a href="/" class="drawer-link link-home">
+        <a href="index.html" class="drawer-link link-home">
             <span class="drawer-link-text">HOME</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f51f589db1d6a1057cde2_shared%20(4).gif" alt="" loading="lazy">
         </a>
@@ -334,7 +334,7 @@ body.dark-mode #statusBar {
             <span class="drawer-link-text">WORK</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f520f976b04b16bc61d2b_shared%20(5).gif" alt="" loading="lazy">
         </a>
-        <a href="#services" class="drawer-link link-services">
+        <a href="service.html" class="drawer-link link-services">
             <span class="drawer-link-text">SERVICES</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f52905775f96448c20208_shared%20(8).gif" alt="" loading="lazy">
         </a>
@@ -343,7 +343,7 @@ body.dark-mode #statusBar {
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f52f85a6d01903d3b0903_shared9-ezgif.com-optimize.gif" alt="" loading="lazy">
         </a>
 
-        <a href="#studio" class="drawer-link link-studio">
+        <a href="studio.html" class="drawer-link link-studio">
             <span class="drawer-link-text">STUDIO</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f52743978d71c86ce864a_shared%20(7).gif" alt="" loading="lazy">
         </a>
