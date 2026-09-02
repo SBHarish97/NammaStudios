@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Namma — Approach</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Hide Scrollbar CSS -->
+  <style>
+      html::-webkit-scrollbar { display: none; }
+      body { -ms-overflow-style: none; scrollbar-width: none; background-color: #E6E5E3; }
+      body.dark-mode { background-color: #111111; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Smooth Scrolling (Lenis) -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({
+      autoRaf: true,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
+  </script>
+
+  <!-- Inject Global UI and Approach Page Content -->
+  <script src="nav.js"></script>
+  <script src="cursor.js"></script>
+  
+  <!-- The Approach content -->
+  <script src="approach.js"></script>
+  
+  <script src="footer.js"></script>
+
+</body>
+</html>
