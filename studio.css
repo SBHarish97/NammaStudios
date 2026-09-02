@@ -1,0 +1,1051 @@
+/* =========================================================
+   STUDIO PAGE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f2;
+  color: #111;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f5f2;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+
+.hero-line {
+  margin: 0;
+
+  overflow: hidden;
+
+  font-family: "Anton", sans-serif;
+
+  font-size: clamp(70px, 13vw, 190px);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -5px;
+
+  text-transform: uppercase;
+}
+
+
+/*
+   IMPORTANT:
+   Text starts below the visible area.
+*/
+
+.hero-line span {
+  display: inline-block;
+
+  opacity: 0;
+
+  transform: translateY(120%);
+
+  will-change: transform, opacity;
+
+  transition:
+    transform 1.1s cubic-bezier(.22, 1, .36, 1),
+    opacity .8s ease;
+}
+
+
+/*
+   JS adds this class after page loads.
+*/
+
+.hero-line span.show-text {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SCROLL TEXT
+   ========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  z-index: 20;
+
+  bottom: 30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-family: "Space Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  animation: studioBounce 1.8s infinite;
+}
+
+
+@keyframes studioBounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+
+}
+
+
+/* =========================================================
+   PIXELS GALLERY
+   ========================================================= */
+
+#pixelsGallery {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+
+#pixelsGallery img {
+  position: absolute;
+
+  width: 180px;
+
+  height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.65)
+    rotate(var(--r));
+
+  transition:
+    opacity .2s ease,
+    transform .55s cubic-bezier(.22, 1, .36, 1);
+
+  will-change: transform, opacity;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, .15);
+}
+
+
+#pixelsGallery img.show {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1)
+    rotate(var(--r));
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#about {
+  width: 100%;
+
+  min-height: 520px;
+
+  margin: 0;
+
+  padding: 120px 60px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 60px;
+
+  align-items: start;
+
+  background: #f5f5f2;
+}
+
+
+#about .eyebrow,
+#fuel .eyebrow {
+  margin: 0;
+
+  font-family: "Space Mono", monospace;
+
+  font-size: 11px;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+
+  opacity: .6;
+}
+
+
+/* =========================================================
+   ABOUT TEXT REVEAL
+   ========================================================= */
+
+#aboutText {
+  width: 100%;
+
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: clamp(20px, 2vw, 27px);
+
+  line-height: 1.4;
+
+  letter-spacing: -.4px;
+
+  opacity: 0;
+
+  transform: translateY(70px);
+
+  transition:
+    opacity 1s ease,
+    transform 1.1s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+#aboutText.reveal {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+#aboutText .word {
+  display: inline-block;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity .55s ease,
+    transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+#aboutText.words-active .word {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+#teamRow {
+ grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin-top: 130px;
+}
+
+
+.team-member {
+ position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  opacity: 0;
+
+  transform: translateY(120px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 1.2s cubic-bezier(.22, 1, .36, 1);
+
+  overflow: hidden;
+}
+
+
+.team-member.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.team-member img {
+  width: 100%;
+  height: 420px;
+
+  object-fit: cover;
+  display: block;
+
+  transform: scale(1.12);
+
+  transition:
+    transform 1.4s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+.team-member span {
+  font-family: "Space Mono", monospace;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+.team-member.visible img {
+  transform: scale(1);
+}
+/* =========================================================
+   FUEL SECTION
+   ========================================================= */
+
+#fuel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: #f5f5f2;
+}
+
+
+/* =========================================================
+   BIG FUEL TYPOGRAPHY
+   ========================================================= */
+
+.fuel-hero {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 35px 10px 100px;
+
+  overflow: hidden;
+
+  background: #f5f5f2;
+}
+
+
+/* BIG TEXT */
+
+.fuel-line {
+
+  position: relative;
+
+  width: 100%;
+
+  font-family: "Anton", sans-serif;
+
+  font-size: clamp(
+    50px,
+    11vw,
+    160px
+  );
+
+  font-weight: 400;
+
+  line-height: .9;
+
+  letter-spacing: -4px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: #111;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SECOND LINE
+   ========================================================= */
+
+.fuel-line-image {
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+}
+
+
+/* BEHIND */
+
+.fuel-line-image .fuel-line-mask {
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   FUEL BIG-TEXT REVEAL (slide up into view, staggered per line)
+   ========================================================= */
+
+.fuel-line-mask {
+
+  display: inline-block;
+
+  overflow: hidden;
+}
+
+
+.fuel-reveal {
+
+  display: inline-block;
+
+  opacity: 0;
+
+  transform: translateY(120%);
+
+  will-change: transform, opacity;
+
+  transition:
+    transform 1.1s cubic-bezier(.22, 1, .36, 1),
+    opacity .8s ease;
+}
+
+
+.fuel-reveal.show-text {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   FUEL FLOATING PREVIEW
+   ========================================================= */
+
+#fuelFloatImage {
+
+  display: inline-block;
+
+  width: 190px;
+  height: 130px;
+
+  margin-right: 24px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  vertical-align: middle;
+
+  opacity: 0;
+
+  transform: translateX(-220px);
+
+  transition:
+    transform 1.3s cubic-bezier(.22, 1, .36, 1),
+    opacity 1s ease;
+}
+
+
+#fuelFloatImage.show-text {
+
+  opacity: 1;
+
+  transform: translateX(0);
+}
+/* =========================================================
+   BLUE CURSOR
+   ========================================================= */
+
+.fuel-cursor {
+
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: blue;
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%);
+
+  will-change:
+    transform;
+}
+
+
+/* =========================================================
+   INFORMATION ROWS
+   ========================================================= */
+
+#fuelList {
+
+  width: 100%;
+
+  padding:
+    0 60px 160px;
+}
+
+
+.fuel-card {
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.4fr
+    1.6fr;
+
+  column-gap: 40px;
+
+  align-items: start;
+
+  padding: 50px 0;
+
+  border-top:
+    1px solid
+    rgba(0,0,0,.15);
+
+  opacity: 0;
+
+  transform: translateY(60px);
+
+  transition:
+    opacity .9s ease,
+    transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+.fuel-card.reveal {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.fuel-card:last-child {
+
+  border-bottom:
+    1px solid
+    rgba(0,0,0,.15);
+}
+
+
+.fuel-label {
+
+  font-family:
+    "Space Mono",
+    monospace;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  opacity: .55;
+}
+
+
+.fuel-card h3 {
+
+  margin: 0;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      38px,
+      4.5vw,
+      64px
+    );
+
+  font-weight: 400;
+
+  line-height: .95;
+
+  letter-spacing: -1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.fuel-card p {
+
+  margin: 0;
+
+  max-width: 500px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  opacity: .72;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .fuel-hero {
+
+    min-height: 70vh;
+
+    padding:
+      25px 8px 80px;
+  }
+
+
+  .fuel-line {
+
+    font-size:
+      clamp(
+        40px,
+        14vw,
+        90px
+      );
+
+    letter-spacing: -2px;
+  }
+
+
+  #fuelFloatImage {
+
+    width: 80px;
+
+    height: 60px;
+
+    margin-right: 12px;
+  }
+
+
+  .fuel-cursor {
+
+    width: 14px;
+
+    height: 14px;
+  }
+
+
+  #fuelList {
+
+    padding:
+      0 20px 100px;
+  }
+
+
+  .fuel-card {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 40px 0;
+  }
+
+}
+/* =========================================================
+   CTA
+   ========================================================= */
+
+#cta {
+  position: relative;
+
+  min-height: 70vh;
+
+  padding: 100px 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: #111;
+
+  color: white;
+
+  overflow: hidden;
+}
+
+
+#cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, .04);
+
+  left: 50%;
+
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    scale(.3);
+
+  transition:
+    transform 1.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+#cta.active::before {
+  transform:
+    translate(-50%, -50%)
+    scale(1.5);
+}
+
+
+.cta-inner {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.cta-label {
+  font-family: "Space Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  opacity: .6;
+
+  margin-bottom: 30px;
+}
+
+
+.cta-title {
+  margin: 0;
+
+  font-family: "Anton", sans-serif;
+
+  font-size: clamp(70px, 13vw, 190px);
+
+  font-weight: 400;
+
+  line-height: .8;
+
+  letter-spacing: -5px;
+
+  transform: translateY(120%);
+
+  transition:
+    transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+#cta.show .cta-title {
+  transform: translateY(0);
+}
+
+
+.cta-text {
+  margin: 30px auto 0;
+
+  max-width: 480px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  opacity: .75;
+}
+
+
+.cta-link {
+  display: inline-block;
+
+  margin-top: 50px;
+
+  padding: 14px 25px;
+
+  border: 1px solid rgba(255, 255, 255, .5);
+
+  border-radius: 100px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+
+.cta-link:hover {
+  background: white;
+
+  color: #111;
+
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   STATUS BAR
+   ========================================================= */
+
+#statusBar {
+  position: fixed;
+
+  left: 0;
+
+  bottom: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 12px 18px;
+
+  background: rgba(245, 245, 242, .92);
+
+  backdrop-filter: blur(12px);
+
+  border-top: 1px solid rgba(0, 0, 0, .12);
+
+  font-family: "Space Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: .5px;
+
+  text-transform: uppercase;
+}
+
+
+#statusClock {
+  min-width: 190px;
+
+  text-align: right;
+
+  transition: opacity .25s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+ .hero {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+
+  .hero-line {
+    font-size: clamp(55px, 16vw, 110px);
+
+    letter-spacing: -3px;
+  }
+
+
+  #pixelsGallery img {
+    width: 100px;
+
+    height: 130px;
+  }
+
+
+  #about {
+    grid-template-columns: 1fr;
+
+    padding: 90px 20px;
+  }
+
+
+  #aboutText {
+    margin-top: 35px;
+
+    max-width: 100%;
+
+    font-size: 20px;
+  }
+
+
+  #teamRow {
+    grid-column: auto;
+
+    grid-template-columns: 1fr;
+
+    margin-top: 90px;
+  }
+
+
+  .team-member img {
+    height: 450px;
+  }
+
+
+  #fuel {
+    padding: 80px 20px 120px;
+  }
+
+
+  .fuel-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 45px 0;
+  }
+
+
+  .fuel-card h3 {
+    font-size: 45px;
+  }
+
+
+  #cta {
+    min-height: 60vh;
+
+    padding: 80px 20px;
+  }
+
+
+  .cta-title {
+    font-size: 60px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .cta-text {
+    font-size: 14px;
+
+    margin-top: 20px;
+  }
+
+
+  #statusBar {
+    font-size: 8px;
+
+    padding: 10px;
+  }
+
+}

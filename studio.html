@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — Studio Namma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shared.css">
+  <link rel="stylesheet" href="./studio.css">
+</head>
+
+<body>
+
+  <!-- ===== Hero: "Behind the Pixels" + scattered photo stack ===== -->
+  <!-- studio.js builds #pixelsGallery and reveals the two hero lines -->
+  <section class="hero" id="studioHero">
+    <div id="pixelsGallery"></div>
+    <div class="hero-content">
+      <h1 class="hero-line"><span>BEHIND</span></h1>
+      <h1 class="hero-line"><span>THE PIXELS</span></h1>
+    </div>
+    <span class="hero-scroll mono">Scroll</span>
+  </section>
+
+  <!-- ===== About ===== -->
+  <!-- studio.js fills #aboutText and #teamRow -->
+  <section id="about">
+    <p class="eyebrow">About</p>
+    <p id="aboutText" class="body-text"></p>
+    <div id="teamRow"></div>
+  </section>
+
+  <!-- ===== The fuel behind the craft (value cards) ===== -->
+  <!-- studio.js fills #fuelList -->
+ <section id="fuel">
+
+  <!-- BIG TYPOGRAPHY INTRO -->
+
+  <div class="fuel-hero" id="fuelHero">
+
+    <div class="fuel-line">
+      <span class="fuel-line-mask"><span class="fuel-reveal">THE FUEL</span></span>
+    </div>
+
+    <div class="fuel-line fuel-line-image">
+
+      <img
+        id="fuelFloatImage"
+        class="fuel-reveal"
+        src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14af05e0d62345efe539e_1.webp"
+        alt=""
+      >
+
+      <span class="fuel-line-mask"><span class="fuel-reveal">BEHIND</span></span>
+
+    </div>
+
+    <div class="fuel-line">
+      <span class="fuel-line-mask"><span class="fuel-reveal">THE CRAFT</span></span>
+    </div>
+
+    <!-- blue cursor -->
+    <div
+      id="fuelCursor"
+      class="fuel-cursor"
+    ></div>
+
+  </div>
+
+
+  <!-- INFORMATION ROWS -->
+
+  <div id="fuelList"></div>
+
+</section>
+
+  <!-- ===== CTA ===== -->
+  <!-- studio.js fills this whole section -->
+  <section id="cta"></section>
+
+  <!-- ===== Fixed bottom status bar: tagline + rotating city clock ===== -->
+  <div id="statusBar" class="mono">
+    <span>We craft bold design &amp; clean Webflow.</span>
+    <span id="statusClock">Paris, France&nbsp;&nbsp;--:--</span>
+  </div>
+
+</body>
+<script src="studio.js"></script>
+<script src="cursor.js"></script>
+<script src="footer.js"></script>
+
+</html>
