@@ -1,9 +1,6 @@
-// nav.js
 const customNavCode = `
 <style>
-/* =========================================
-   STUDIO NAMMA REPLICA NAVBAR CSS
-   ========================================= */
+
 
 .namma-navbar {
     position: fixed;
@@ -52,15 +49,12 @@ body.dark-mode .namma-navbar.is-scrolled {
     display: inline-flex;
 }
 
-/* 4-Column Alignments */
 .nav-col-1 { text-align: left; justify-self: start; }
 .nav-col-2 { text-align: left; justify-self: start; }
 .nav-col-3 { text-align: right; justify-self: end; }
 .nav-col-4 { text-align: right; justify-self: end; }
 
-/* =========================================
-   SIGNATURE VERTICAL SLIDE HOVER EFFECT
-   ========================================= */
+
 .nav-slide-box { overflow: hidden; display: inline-flex; }
 .nav-slide-wrapper { position: relative; display: inline-flex; }
 
@@ -82,9 +76,7 @@ body.dark-mode .namma-navbar.is-scrolled {
 .nav-slide-box:hover .nav-slide-original { transform: translate(0%, -100%); }
 .nav-slide-box:hover .nav-slide-hover { transform: translate(0%, 0%); }
 
-/* =========================================
-   FULLSCREEN MENU DRAWER (WITH STAGGER ANIMATIONS)
-   ========================================= */
+
 .namma-menu-drawer {
     position: fixed;
     top: 0;
@@ -101,7 +93,6 @@ body.dark-mode .namma-navbar.is-scrolled {
     box-sizing: border-box;
     opacity: 0;
     pointer-events: none;
-    /* Dramatic slide easing to match Studio Namma */
     transform: translateY(-100%);
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease, background-color 0.4s ease, color 0.4s ease;
     overflow-y: auto;
@@ -113,7 +104,7 @@ body.dark-mode .namma-navbar.is-scrolled {
     transform: translateY(0);
 }
 
-/* 4-Row Grid Layout */
+
 .namma-menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -138,7 +129,6 @@ body.dark-mode .namma-navbar.is-scrolled {
     display: block;
     width: fit-content;
     
-    /* Animation Base State (Hidden, moved down) */
     opacity: 0;
     transform: translateY(60px);
     transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -191,7 +181,7 @@ body.dark-mode .namma-navbar.is-scrolled {
     transform: translateY(0);
 }
 
-//  menu hover effect
+
 
 
 .namma-menu-grid:has(.left-col:hover) .right-col .drawer-link-text {
@@ -224,9 +214,7 @@ body.dark-mode .namma-navbar.is-scrolled {
 .link-plans    { grid-column: 2; grid-row: 3; } 
 .link-news     { grid-column: 2; grid-row: 4; } 
 
-/* =========================================
-   DARK MODE GLOBALS
-   ========================================= */
+
 body.dark-mode {
     --bg-color: #111111 !important;
     --text-color: #E6E5E3 !important;
@@ -255,9 +243,7 @@ body.dark-mode #statusBar {
     color: #E6E5E3 !important;
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
+
 @media (max-width: 768px) {
     .namma-navbar {
         grid-template-columns: 1fr auto auto;
@@ -334,7 +320,7 @@ body.dark-mode #statusBar {
             <span class="drawer-link-text">WORK</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f520f976b04b16bc61d2b_shared%20(5).gif" alt="" loading="lazy">
         </a>
-        <a href="service.html" class="drawer-link link-services">
+        <a href="services.html" class="drawer-link link-services">
             <span class="drawer-link-text">SERVICES</span>
             <img class="drawer-link-gif" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/687f52905775f96448c20208_shared%20(8).gif" alt="" loading="lazy">
         </a>

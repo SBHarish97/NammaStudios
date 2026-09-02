@@ -1,11 +1,4 @@
-/* =========================================================
-   STUDIO PAGE JAVASCRIPT
-   ========================================================= */
 
-
-/* =========================================================
-   1. HERO TEXT ANIMATION
-   ========================================================= */
 
 function revealHeroLines() {
 
@@ -46,9 +39,6 @@ if (
 }
 
 
-/* =========================================================
-   2. HERO CURSOR IMAGE EFFECT
-   ========================================================= */
 
 (function pixelsGallery() {
 
@@ -279,9 +269,6 @@ if (
 })();
 
 
-/* =========================================================
-   3. ABOUT + TEAM
-   ========================================================= */
 
 (function about() {
 
@@ -364,7 +351,7 @@ if (
     ).join("");
 
 
-  /* ABOUT TEXT OBSERVER — whole block entrance + staggered word/line reveal */
+
 
   const aboutObserver =
     new IntersectionObserver(
@@ -381,13 +368,7 @@ if (
                 "reveal"
               );
 
-              /*
-                Triggers the staggered cascade —
-                each word (and by extension each
-                line) fades/slides in one after
-                another using the per-word
-                transition-delay set above.
-              */
+
 
               entry.target.classList.add(
                 "words-active"
@@ -414,11 +395,7 @@ if (
   );
 
 
-  /* TEAM OBSERVER */
 
-/* =========================================================
-   TEAM IMAGE REVEAL
-   ========================================================= */
 
 const teamCards =
   document.querySelectorAll(".team-member");
@@ -454,7 +431,7 @@ teamCards.forEach((card) => {
 
 });
 
-  /* TEAM PARALLAX */
+
 
   function teamParallax() {
 

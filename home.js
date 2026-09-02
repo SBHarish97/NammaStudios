@@ -15,8 +15,6 @@ window.addEventListener("load", () => {
 
 });
 
-/* HOMEPAGE */
-
 
 (function heroPreview() {
   const hero = document.querySelector(".hero");
@@ -225,7 +223,7 @@ function stopAnimation(){
     });
 
 }
-/* ---------- Fixed bottom bar: cycles one city/time at a time ---------- */
+
 (function statusBar() {
   const el = document.getElementById("statusClock");
   if (!el) return;
@@ -257,7 +255,7 @@ function stopAnimation(){
   }, 3000);
 })();
 
-/* ---------- Selected projects: full-bleed 2-col grid ---------- */
+
 (function projects() {
   const track = document.getElementById("projectTrack");
   if (!track) return;
@@ -312,7 +310,7 @@ function stopAnimation(){
   cards.forEach((c) => revealObserver.observe(c));
 })();
 
-/* ---------- Services: stacked list + preview box that follows the cursor ---------- */
+
 (function services() {
   const list = document.getElementById("serviceList");
   const preview = document.getElementById("servicePreview");
@@ -422,7 +420,7 @@ function stopAnimation(){
   });
 })();
 
-/* ---------- CTA ---------- */
+
 (function cta() {
   const section = document.getElementById("cta");
   if (!section) return;

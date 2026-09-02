@@ -14,7 +14,6 @@ body{
 .hero-content{
     width:100%;
     max-width:1400px;
-    /* margin:auto; */
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -108,7 +107,7 @@ body{
 }
 
 }
-/* ===== Fonts (scoped to homepage content only) ===== */
+
 .display {
   font-family: 'Anton', 'Arial Narrow', sans-serif;
   text-transform: uppercase;
@@ -149,7 +148,6 @@ body{
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    /* padding: 120px 40px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,8 +215,7 @@ iframe{
   border-top: 1px solid rgba(0,0,0,.15);
 }
 
-/* ===== Selected projects (full-bleed grid, like the reference) ===== */
-/* ================= PLAYGROUND ================= */
+
 .custom-cursor-dot.is-hovering-btn {
     width: 120px;
     height: 120px;
@@ -348,7 +345,7 @@ iframe{
     }
 
 }
-/* ===== Services (stacked list, floating preview) ===== */
+
 #services {
   position: relative;
   padding: 100px 20px 140px;
@@ -467,7 +464,7 @@ iframe{
   #servicePreview { display: none; }
 }
 
-/* ===== CTA ===== */
+
 #cta {
   padding: 100px 20px 120px;
 }

@@ -3,8 +3,6 @@ const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 });
-
-// Auto-wrap characters and inject a CSS variable for the animation delay stagger
 let globalCharIndex = 0;
 document.querySelectorAll('.hero-word').forEach(word => {
     word.innerHTML = word.textContent.split('').map(char => {
@@ -13,9 +11,9 @@ document.querySelectorAll('.hero-word').forEach(word => {
     }).join('');
 });
 
-// Handle dynamically animated text (description, mono-text, paragraphs)
+
 document.querySelectorAll('.animate-text').forEach(desc => {
-    let descCharIndex = 0; // Reset index for each element
+    let descCharIndex = 0;
     let newHtml = '';
     desc.childNodes.forEach(node => {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -38,7 +36,7 @@ document.querySelectorAll('.animate-text').forEach(desc => {
     desc.innerHTML = newHtml.trim();
 });
 
-// Trigger animations when scrolled into view (0% vh by default)
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -47,7 +45,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { rootMargin: "0px 0px 0px 0px" });
 
-// Late trigger specifically for the craft text/img at 70% vh
+
 const lateObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -64,7 +62,7 @@ document.querySelectorAll('.animate-on-scroll-late').forEach(el => {
     lateObserver.observe(el);
 });
 
-// Text trigger specifically at 95% vh
+
 const textObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -77,7 +75,7 @@ document.querySelectorAll('.animate-on-scroll-text').forEach(el => {
     textObserver.observe(el);
 });
 
-// Trigger at 90% vh
+
 const observer90 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -90,7 +88,7 @@ document.querySelectorAll('.animate-on-scroll-90').forEach(el => {
     observer90.observe(el);
 });
 
-// Trigger at 80% vh
+
 const observer80 = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

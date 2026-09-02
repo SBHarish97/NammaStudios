@@ -1,6 +1,4 @@
-// cursor.js
 document.addEventListener("DOMContentLoaded", () => {
-    // Inject the custom cursor HTML and CSS
     const cursorHTML = `
         <style>
             @keyframes rotateTwoPhase {
@@ -14,10 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 left: 0;
                 width: 32px;
                 height: 32px;
-                /* border removed as requested */
-                pointer-events: none; /* So it doesn't block clicks */
+                pointer-events: none;
                 z-index: 10000;
-                display: none; /* Hidden until mouse moves */
+                display: none;
                 will-change: transform;
             }
             .custom-cursor-dot {
@@ -26,19 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 left: 41px;
                 width: 16px;
                 height: 16px;
-                // background-color: #0044ff;
+
                 background-color: #1616feff;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
-                transform: rotate(0deg); /* Initial rotation */
-                /* Fast width expansion, slower height expansion */
+                transform: rotate(0deg);
                 transition: width 0.05s ease-out, 
                             height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s, 
                             border-radius 0.4s ease,
-                            transform 0.15s ease; /* Fast snap back when un-hovered */
+                            transform 0.15s ease;
             }
             .custom-cursor-text {
                 color: #E6E5E3;
@@ -51,17 +47,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 transition: opacity 0.3s ease;
                 
             }
-            /* When hovering the say-hello button */
+
             .custom-cursor-dot.is-hovering-btn {
                 width: 130px;
                 height: 46px;
-                border-radius: 6px; /* Rectangle shape */
+                border-radius: 6px;
                 transform: rotate(-10deg);
-                animation: rotateTwoPhase 0.8s forwards; /* 2-phase rotation */
+                animation: rotateTwoPhase 0.8s forwards;
             }
             .custom-cursor-dot.is-hovering-btn .custom-cursor-text {
                 opacity: 1;
-                transition: opacity 0.4s ease 0.2s; /* Slight delay for text appearance */
+                transition: opacity 0.4s ease 0.2s;
             }
         </style>
         <div class="custom-cursor-box" id="customCursorBox">
@@ -81,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let cursorY = 0;
     let isInitialized = false;
 
-    // Follow the mouse
     document.addEventListener('mousemove', (e) => {
         if (cursorBox.style.display === 'none' || cursorBox.style.display === '') {
             cursorBox.style.display = 'block';
@@ -98,12 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const smoothAnimate = () => {
         if (isInitialized) {
-            // LERP (Linear Interpolation) for smoothness
-            // The 0.15 value determines the speed/smoothness. Lower is slower.
             cursorX += (mouseX - cursorX) * 0.05;
             cursorY += (mouseY - cursorY) * 0.05;
 
-            // Offset by half the width/height (16px) to center the 32x32 box around the mouse
             cursorBox.style.transform = `translate3d(${cursorX - 16}px, ${cursorY - 16}px, 0)`;
         }
         requestAnimationFrame(smoothAnimate);
@@ -111,34 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(smoothAnimate);
 
-    // Hide cursor when it leaves the window
     document.addEventListener('mouseleave', () => {
         cursorBox.style.display = 'none';
     });
 
-    // Show cursor when it enters the window
     document.addEventListener('mouseenter', () => {
         cursorBox.style.display = 'block';
     });
 
-    // Hover effect for the "SAY HELLO" button and email link
-    // PLAYGROUND hover added for the "PORTFOLIO" text in the header
-document.addEventListener("mouseover", (e) => {
-    if (e.target.closest(".play-header h2")) {
-        cursorText.textContent = "PORTFOLIO";
-        dot.classList.add("is-hovering-btn");
-    }
-});
-
-document.addEventListener("mouseout", (e) => {
-    if (e.target.closest(".play-header h2")) {
-        dot.classList.remove("is-hovering-btn");
-    }
-});
     const dot = document.getElementById('customCursorDot');
     const cursorText = dot.querySelector('.custom-cursor-text');
 
-    // Using event delegation since the button is dynamically inserted by footer.js
+
     document.addEventListener('mouseover', (e) => {
         if (e.target.closest('.say-hello-btn')) {
             cursorText.textContent = "LET'S TALK";

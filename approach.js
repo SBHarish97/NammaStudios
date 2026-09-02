@@ -1,14 +1,11 @@
 const approachCode = `
 <style>
-    /* =========================================
-       APPROACH PAGE CSS
-       ========================================= */
     .approach-main {
         width: 100%;
         background-color: transparent;
         color: inherit;
         overflow: hidden;
-        padding-top: 100px; /* Offset for navbar */
+        padding-top: 100px;
     }
 
     .mono-label {
@@ -18,9 +15,7 @@ const approachCode = `
         font-size: 13px;
     }
 
-    /* =========================================
-       HERO 1: SHARP MINDS
-       ========================================= */
+
     .approach-hero {
         min-height: 85vh;
         display: flex;
@@ -43,9 +38,7 @@ const approachCode = `
         margin: 0;
     }
 
-    /* =========================================
-       HERO 2: MAKE IT AS SIMPLE...
-       ========================================= */
+
     .approach-manifesto {
         min-height: 100vh;
         display: flex;
@@ -162,7 +155,7 @@ const approachCode = `
         transform: translateY(0);
     }
 
-    /* Stagger the inner elements of the grid */
+
     .step-row .step-label,
     .step-row h2,
     .step-row p {
@@ -175,9 +168,7 @@ const approachCode = `
     .step-row.is-visible h2 { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
     .step-row.is-visible p { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
 
-    /* =========================================
-       MOBILE RESPONSIVENESS
-       ========================================= */
+
     @media (max-width: 768px) {
         .step-row {
             grid-template-columns: 1fr;
@@ -194,13 +185,11 @@ const approachCode = `
 </style>
 
 <main class="approach-main" id="approach">
-    <!-- HERO 1 -->
     <section class="approach-hero">
         <h1 class="giant-text reveal-up">SHARP MINDS</h1>
         <h1 class="giant-text reveal-up" style="transition-delay: 0.1s;">ICONIC MOVES</h1>
     </section>
 
-    <!-- HERO 2 -->
     <section class="approach-manifesto">
         <h1 class="giant-text reveal-up">MAKE IT AS</h1>
         <h1 class="giant-text reveal-up" style="transition-delay: 0.1s;">SIMPLE AS</h1>
@@ -212,7 +201,6 @@ const approachCode = `
         </div>
     </section>
 
-    <!-- PROCESS STEPS -->
     <section class="approach-steps">
         
         <div class="step-row reveal-trigger">
@@ -261,8 +249,6 @@ const approachCode = `
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Inject the Approach HTML into the DOM
-    // Checking if the footer exists so we can safely inject right above it.
     const footerElement = document.querySelector('.namma-replica');
     if (footerElement) {
         footerElement.insertAdjacentHTML('beforebegin', approachCode);
@@ -270,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.insertAdjacentHTML('beforeend', approachCode);
     }
 
-    // 2. Set up Intersection Observer for scroll animations
+
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-trigger');
     
     const revealObserver = new IntersectionObserver((entries) => {
@@ -286,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
     
-    // 3. Immediately trigger the top hero section elements so they animate in smoothly on page load
+
     setTimeout(() => {
         document.querySelectorAll('.approach-hero .reveal-up').forEach(el => {
             el.classList.add('is-visible');

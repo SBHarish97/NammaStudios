@@ -1,12 +1,9 @@
 const customFooterCode = `
 <style>
-/* =========================================
-   STUDIO NAMMA REPLICA CSS (PIXEL PERFECT)
-   ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono&display=swap');
 
-/* HIDE SCROLLBAR GLOBALLY */
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -16,7 +13,7 @@ body {
 }
 
 .namma-replica {
-    --bg-color: #E6E5E3; /* Exact warm light gray from screenshot */
+    --bg-color: #E6E5E3;
     --text-color: #111111;
     --blue-color: #0000ff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -39,9 +36,7 @@ body {
     letter-spacing: 0.1em;
 }
 
-/* =========================================
-   TOP SECTION: LET'S WORK TOGETHER
-   ========================================= */
+
 .footer-line-mask {
     display: inline-block;
     overflow: hidden;
@@ -79,13 +74,13 @@ body {
 .footer-hero-line {
     font-family: 'Anton', sans-serif;
     font-size: 9vw;
-    line-height: 1; /* Tightly packed like the screenshot */
-    font-weight: 400; /* Anton is naturally bold */
+    line-height: 1;
+    font-weight: 400;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    letter-spacing: 0.01em; /* Extremely tight letter spacing */
+    letter-spacing: 0.01em;
     display: flex;
     align-items: center;
 }
@@ -108,7 +103,7 @@ body {
 }
 
 .is-visible .footer-img-reveal {
-    width: 1.8em; /* Shorter expanded width */
+    width: 1.8em;
     opacity: 1;
     margin-right: 2vw;
     transition-delay: 0.8s;
@@ -118,7 +113,6 @@ body {
     max-width: 30vw;
     margin-top: 0.5vw;
     margin-right: 5vw;
-    // background-color: red;
 }
 
 .footer-side-text p {
@@ -141,21 +135,18 @@ body {
     font-size: 1.4em;
     line-height: 1;
     position: relative;
-    top: -3px; /* Moved further up */
+    top: -3px;
     transition: transform 0.3s ease;
 }
 .say-hello-btn:hover .hello-arrow {
     transform: translateX(6px);
 }
 
-/* =========================================
-   MIDDLE SECTION: VIDEO CARDS
-   ========================================= */
+
 .footer-videos-row {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1.5vw;
-    // justify-content: space-between;
     margin: 10vw 1.2vw 0vw 1.2vw;
 }
 
@@ -165,7 +156,7 @@ body {
 }
 
 .footer-video-card {
-    opacity: 0; /* Starts hidden */
+    opacity: 0;
     transform: translateY(40px);
     width: 96%;
     height:90%;
@@ -191,17 +182,13 @@ body {
     object-fit: cover;
 }
 
-/* =========================================
-   NEW BOTTOM INFO SECTION
-   ========================================= */
+
 .footer-info-section {
     display: flex;
-    // justify-content: space-between;
     gap:46.5vw;
     padding: 0 1.2vw;
     margin-top: 4vw;
     margin-bottom: 4vw;
-    // background-color:rgb(238, 129, 129);
 }
 
 .footer-info-left {
@@ -271,50 +258,42 @@ body {
     flex-direction: column;
     gap: 1.9vw;
     text-align: left;
-    // background-color: rgb(238, 220, 129);
 }
 
 .footer-text-block {
     line-height: 1.4;
     font-size:0.89rem;
-    // background-color: rgb(169, 238, 129);
 }
 
-/* =========================================
-   GIANT STRETCH TEXT AT BOTTOM
-   ========================================= */
+
 .footer-giant-text-container {
     width: 100%;
     text-align: center;
     overflow: hidden;
     height: 0px;
-    margin-bottom: 1.5vw; /* distance from bottom of screen */
+    margin-bottom: 1.5vw;
     display: flex;
     align-items: flex-end;
-    // justify-content: center;
 }
 
 .footer-giant-text {
     font-family: 'Anton', sans-serif;
-    font-size: 35.5vw; /* Giant text to fill width */
+    font-size: 35.5vw;
     line-height: 0.8;
     font-weight: 400;
-    letter-spacing: -0.04em; /* Reduced letter spacing */
+    letter-spacing: -0.04em;
     text-transform: uppercase;
     color: var(--text-color);
     white-space: nowrap;
     transform-origin: bottom center;
-    transform: scaleY(0.05); /* starts very compressed */
+    transform: scaleY(0.05);
     will-change: transform;
 }
 
 </style>
 
 <div class="namma-replica">
-    
-    
 
-    <!-- TOP: LET'S WORK TOGETHER -->
     <div class="footer-top-section">
         <div class="footer-hero-text footer-animate-on-scroll">
             <div class="footer-hero-line">
@@ -322,7 +301,6 @@ body {
             </div>
             <div class="footer-hero-line">
                 <span class="footer-line-mask"><span class="footer-line-reveal" style="animation-delay: 0.15s;">
-                    <!-- Team Image perfectly aligned -->
                     <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp" alt="Team" class="footer-hero-img footer-img-reveal">
                     TOGETHER
                 </span></span>
@@ -346,7 +324,6 @@ body {
         </div>
     </div>
 
-    <!-- MIDDLE: 6 VIDEO CARDS ROW -->
     <div class="footer-videos-row footer-animate-on-scroll">
         <div class="footer-video-card" style="animation-delay: 0.1s;">
             <video src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985%2F68dfa249c8ad1d2624abf3d5_Footer-Service-designV2-transcode.mp4" autoplay loop muted playsinline></video>
@@ -368,7 +345,6 @@ body {
         </div>
     </div>
 
-    <!-- NEW FOOTER INFO SECTION -->
     <div class="footer-info-section text-mono footer-animate-on-scroll">
         <div class="footer-info-left">
             <div class="footer-links-group">
@@ -420,7 +396,6 @@ body {
         </div>
     </div>
 
-    <!-- GIANT STRETCH TEXT AT BOTTOM -->
     <div class="footer-giant-text-container">
         <div class="footer-giant-text" id="bottomStretchText">NAMMA</div>
     </div>
@@ -449,30 +424,26 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (bottomStretchText && bottomContainer) {
         let extraHeight = 0;
-        const MAX_HEIGHT = window.innerWidth * 0.325; // 30vw max height
+        const MAX_HEIGHT = window.innerWidth * 0.325;
         
         const updateStretch = () => {
             bottomContainer.style.height = `${extraHeight}px`;
             const progress = extraHeight / MAX_HEIGHT;
             const scale = 0.05 + (progress * 1.0);
             bottomStretchText.style.transform = `scaleY(${Math.max(0.05, scale)})`;
-            
-            // Keep Lenis in sync with the new page height
             if (typeof lenis !== 'undefined') {
                 lenis.resize();
             }
         };
         
         const handleOverscroll = (deltaY) => {
-            // Check if at the absolute bottom of the page
             const scrollY = typeof lenis !== 'undefined' ? lenis.scroll : window.scrollY;
             const maxScroll = document.body.offsetHeight - window.innerHeight;
             const isAtBottom = scrollY >= maxScroll - 5;
             
             if (isAtBottom && deltaY > 0) {
-                // Scrolling down past the bottom
                 if (extraHeight < MAX_HEIGHT) {
-                    extraHeight += deltaY * 0.6; // sensitivity
+                    extraHeight += deltaY * 0.6;
                     if (extraHeight > MAX_HEIGHT) extraHeight = MAX_HEIGHT;
                     
                     updateStretch();
@@ -484,7 +455,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     return true;
                 }
             } else if (extraHeight > 0 && deltaY < 0) {
-                // Scrolling up while stretched
                 extraHeight += deltaY * 0.6;
                 if (extraHeight < 0) extraHeight = 0;
                 
